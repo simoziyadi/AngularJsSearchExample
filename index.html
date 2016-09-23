@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app>
+  <head>
+  <meta name="viewport" content="width=device-width" >
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+	<style>
+	
+	</style>
+  </head>
+  <body>
+ <div ng-controller="List">
+ <input type="search" ng-model="search"></input>
+  <ul>
+    <li ng-repeat="x in names | filter:search ">
+     <pre>{{x.name}} have {{ x.age }}</pre>
+    </li>
+  </ul>
+</div>
+
+<script >
+	var List= function($scope){
+	
+	$scope.names=[
+	{name:"simo",age:24},
+	{name:"omar",age:23},
+	{name:"ans",age:22},
+	];
+	};
+	
+	</script>
+</body>
+  
+</html>
